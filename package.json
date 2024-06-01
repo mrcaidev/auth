@@ -7,10 +7,14 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
+    "supabase:gen-types": "TARGET=utils/supabase/types.ts && pnpm supabase gen types typescript --local > $TARGET && pnpm prettier $TARGET --write",
     "prepare": "husky"
   },
   "dependencies": {
+    "@radix-ui/react-label": "^2.0.2",
+    "@radix-ui/react-separator": "^1.0.3",
     "@radix-ui/react-slot": "^1.0.2",
+    "@radix-ui/react-toast": "^1.1.5",
     "@supabase/ssr": "^0.3.0",
     "@supabase/supabase-js": "^2.43.4",
     "class-variance-authority": "^0.7.0",
