@@ -1,3 +1,4 @@
+import { ThemeInitializer } from "@/components/theme-initializer";
 import type { Metadata } from "next";
 import { Inter as FontSans } from "next/font/google";
 import type { PropsWithChildren } from "react";
@@ -15,7 +16,10 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: PropsWithChildren) {
   return (
-    <html lang="en-US" className={fontSans.variable}>
+    <html lang="en-US" suppressHydrationWarning className={fontSans.variable}>
+      <head>
+        <ThemeInitializer />
+      </head>
       <body>{children}</body>
     </html>
   );
